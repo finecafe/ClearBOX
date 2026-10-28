@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Nền và bề mặt (giao diện tối) -->
+    <color name="bg">#0B1620</color>
+    <color name="surface">#16293A</color>
+    <color name="surface_focus">#1F3A52</color>
+    <color name="surface_stroke">#25394A</color>
+
+    <!-- Màu nhấn -->
+    <color name="accent">#2EC4B6</color>
+    <color name="accent_dark">#1B8F85</color>
+    <color name="danger">#D64550</color>
+    <color name="danger_dark">#7A2630</color>
+    <color name="amber">#FFC83D</color>
+    <color name="ok_green">#7FE0A8</color>
+    <color name="sys_blue">#7FB7FF</color>
+
+    <!-- Chữ -->
+    <color name="text">#E8F1F5</color>
+    <color name="text_dim">#8FA6B3</color>
+
+    <!-- Dòng danh sách -->
+    <color name="row">#13222E</color>
+    <color name="row_checked">#1D4E5E</color>
+
+    <!-- Nền biểu tượng ứng dụng -->
+    <color name="ic_launcher_background">#0F3D56</color>
+</resources>

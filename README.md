@@ -6,8 +6,14 @@
 - Liệt kê app, chọn nhiều app rồi **Vô hiệu hóa** (khuyên dùng, bật lại được) hoặc **Gỡ cài đặt**.
 - **Xóa cache** tất cả app một lần.
 - **Khôi phục** app đã tắt hoặc đã gỡ.
-- Danh sách bảo vệ: launcher, bàn phím đang dùng, SystemUI, Settings, Google Play Services, các gói điều khiển phần cứng Amlogic (`com.droidlogic`, `com.amlogic`)... không cho chọn.
+- Danh sách bảo vệ lõi: launcher, bàn phím đang dùng, SystemUI, Settings, Google Play Services, các gói điều khiển phần cứng Amlogic (`com.droidlogic`, `com.amlogic`)... không cho chọn và **không thể bỏ**.
+- **Bảo vệ tùy chỉnh (mới):** chọn app rồi bấm **Bảo vệ app đã chọn** để ghim thêm; bấm **Quản lý danh sách bảo vệ** để bỏ ghim. Danh sách ghim được lưu lại trên box.
 - Mặc định chỉ hiện app có biểu tượng khởi chạy; chế độ "TẤT CẢ gói" nguy hiểm hơn.
+
+## Giao diện (mới)
+- Giao diện tối, chữ lớn, tối ưu cho điều khiển từ xa: nút và dòng danh sách có viền sáng khi được trỏ tới.
+- Màn hình rộng (TV) xếp nút thành 4 cột, màn hình hẹp 2 cột; có bộ đếm "Đã chọn N / M".
+- Biểu tượng thùng rác + tia sáng (adaptive icon) và banner 320x180dp cho màn hình chính Android TV.
 
 ## Quyền root
 Box `userdebug` / `test-keys` thường có sẵn `su`. Có root thì app tự vô hiệu hóa/gỡ/xóa cache.
