@@ -15,6 +15,14 @@ android {
         versionName "1.1"
     }
 
+    // Một số ROM box cũ chỉ kiểm tra chữ ký v1: bật cả v1 lẫn v2 cho bản debug
+    signingConfigs {
+        debug {
+            enableV1Signing = true
+            enableV2Signing = true
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
