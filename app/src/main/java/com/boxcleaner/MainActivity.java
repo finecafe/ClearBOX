@@ -230,7 +230,7 @@ public class MainActivity extends Activity {
     }
 
     private int color(int res) {
-        return getColor(res);
+        return getResources().getColor(res);
     }
 
     private TextView label(String text, int sp, int colorRes, boolean bold) {
@@ -681,7 +681,7 @@ public class MainActivity extends Activity {
         new Thread(() -> {
             PackageManager pm = getPackageManager();
             final List<AppItem> found = new ArrayList<>();
-            for (ApplicationInfo ai : pm.getInstalledApplications(PackageManager.MATCH_UNINSTALLED_PACKAGES)) {
+            for (ApplicationInfo ai : pm.getInstalledApplications(PackageManager.GET_UNINSTALLED_PACKAGES)) {
                 boolean removed = (ai.flags & ApplicationInfo.FLAG_INSTALLED) == 0;
                 boolean isSystem = (ai.flags & ApplicationInfo.FLAG_SYSTEM) != 0;
                 boolean disabled = !removed && !ai.enabled;
@@ -786,8 +786,19 @@ public class MainActivity extends Activity {
                 }
             });
             reader.start();
-            if (!p.waitFor(timeoutSec, TimeUnit.SECONDS)) {
-                p.destroyForcibly();
+            long deadline = System.currentTimeMillis() + TimeUnit.SECONDS.toMillis(timeoutSec);
+            boolean finished = false;
+            while (System.currentTimeMillis() < deadline) {
+                try {
+                    p.exitValue();
+                    finished = true;
+                    break;
+                } catch (IllegalThreadStateException stillRunning) {
+                    Thread.sleep(100);
+                }
+            }
+            if (!finished) {
+                p.destroy();
                 r.out = "hết thời gian chờ";
                 return r;
             }
