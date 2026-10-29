@@ -11,11 +11,15 @@
 
     <application
         android:allowBackup="false"
+        android:banner="@drawable/banner"
+        android:icon="@mipmap/ic_launcher"
         android:label="Box Cleaner"
-        android:theme="@android:style/Theme.Material">
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:theme="@style/AppTheme">
 
         <activity
             android:name=".MainActivity"
+            android:banner="@drawable/banner"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
